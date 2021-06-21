@@ -1,2 +1,2 @@
 #!/bin/bash
-cd src/web/app && mvn jetty:stop
+cd /home/ubuntu/geo-store/src/web/app && mvn jetty:stop
