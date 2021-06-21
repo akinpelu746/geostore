@@ -4,12 +4,19 @@ files:
   - source: /
     destination: /home/ubuntu/geo-store  
 hooks:
+  AfterInstall:
+    - location: /home/ubuntu/geo-store/scripts/fix_priviledge_issues.sh
+      timeout: 300
+      runas: root
+    - location: /home/ubuntu/geo-store/scripts/install_depedencies.sh.sh
+      timeout: 300
+      runas: root
   ApplicationStart:
-    - location: scripts/start_server.sh
+    - location: /home/ubuntu/geo-store/scripts/start_server.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/stop_server.sh
+    - location: /home/ubuntu/geo-store/scripts/scripts/stop_server.sh
       timeout: 300
       runas: root
 

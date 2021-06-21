@@ -1,3 +1,3 @@
 #!/bin/bash
-service  nginx start
 
+cd /home/ubuntu/geo-store/src/web/app && mvn jetty:run

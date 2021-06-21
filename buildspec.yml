@@ -4,17 +4,24 @@ phases:
   install:
     runtime-versions:
       java: openjdk11
+    commands:
+    - echo installing maven...
+    - apt-get update -y
+    - apt-get install -y maven
   pre_build:
     commands:
       -  java -version
   build:
     commands:
       - echo Build started on `date`
-      - cd src
-      - mvn clean install
+      - cd src &&  mvn clean install
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - staging/geostore-$CODEBUILD_BUILD_NUMBER.jar
+    - '**/*'
+  discard-paths: no
+cache:
+  paths:
+  - '/root/.m2/**/*'

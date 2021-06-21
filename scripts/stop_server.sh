@@ -1,5 +1,2 @@
 #!/bin/bash
-isExistApp = `pgrep nginx`
-if [[ -n  $isExistApp ]]; then
-    service nginx stop        
-fi
+cd /home/ubuntu/geo-store/src/web/app && mvn jetty:stop
