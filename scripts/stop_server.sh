@@ -1,2 +1,2 @@
 #!/bin/bash
-cd /home/ubuntu/geo-store/src/web/app && mvn jetty:stop
+pkill -f 'java -jar'

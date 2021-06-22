@@ -8,7 +8,6 @@ files:
 hooks:
   AfterInstall:
     - location: scripts/fix_priviledge_issues.sh
-    - location: scripts/install_depedencies.sh
       timeout: 300
       runas: root
   ApplicationStart:
